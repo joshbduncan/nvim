@@ -1,5 +1,5 @@
 return {
-    'Mofiqul/dracula.nvim',
+    'dracula/vim',
     priority = 1000,
     config = function()
       vim.cmd.colorscheme 'dracula'

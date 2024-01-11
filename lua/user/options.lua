@@ -1,6 +1,6 @@
 vim.o.breakindent = true
 vim.o.clipboard = "unnamedplus"
-vim.o.cmdheight = 2
+-- vim.o.cmdheight = 2
 vim.o.completeopt = "menuone,noselect"
 vim.o.hlsearch = false
 vim.o.ignorecase = true
