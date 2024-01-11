@@ -3,17 +3,17 @@
 function FixMe()
     if (vim.fn.executable("rg") == 0)
     then
-      print("Executable rg (ripgrep) not found. Install and rerun.")
-      return
+        print("Executable rg (ripgrep) not found. Install and rerun.")
+        return
     end
-  
-    local tags={"BUG", "HACK", "FIXME", "TODO", "\\[\\s\\]", "\\[x\\]"}
-    local comment_strings={"/*", "\\#", "<!--", ";", "-"}
-    local regex="'(" .. table.concat(comment_strings, "\\|") .. ")\\s*(" .. table.concat(tags, "\\|") .. ")'"
-  
-    vim.o.grepprg="rg --vimgrep --trim"
+
+    local tags = { "BUG", "HACK", "FIXME", "TODO", "\\[\\s\\]", "\\[x\\]" }
+    local comment_strings = { "/*", "\\#", "<!--", ";", "-" }
+    local regex = "'(" .. table.concat(comment_strings, "\\|") .. ")\\s+(" .. table.concat(tags, "\\|") .. ")'"
+
+    vim.o.grepprg = "rg --vimgrep --trim"
     vim.cmd("silent grep! " .. regex)
     vim.cmd("Telescope quickfix")
-  end
-  
-  vim.api.nvim_create_user_command("FixMe", FixMe, {})
+end
+
+vim.api.nvim_create_user_command("FixMe", FixMe, {})

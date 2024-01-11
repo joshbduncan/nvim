@@ -5,13 +5,13 @@ return {
 
     -- Detect tabstop and shiftwidth automatically
     'tpope/vim-sleuth',
-    
+
     { 'folke/which-key.nvim', opts = {} },
 
     -- better notifications (as opposed to print)
     {
         "rcarriga/nvim-notify",
-        config = function ()
+        config = function()
             vim.notify = require("notify")
         end,
     },
