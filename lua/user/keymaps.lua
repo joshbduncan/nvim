@@ -5,4 +5,3 @@ local opts = { noremap = true, silent = true }
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-
