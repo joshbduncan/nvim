@@ -1,6 +1,5 @@
 -- run adobe extendscript files from neovim
-function JSXRunner()
-  -- app lookup table
+function ExtendScriptRunner() -- app lookup table
   local app_lut = {
     illustrator = "Adobe\\ Illustrator",
     photoshop = "Adobe\\ Photoshop\\ 2024",
@@ -58,7 +57,7 @@ function JSXRunner()
     end
   end
 
-  -- ensure the current buffer is save, and if not save as a temporary file
+  -- ensure the current buffer is saved, and if not save as a temporary file
   local ensure_or_create_path = function()
     local f = vim.fn.expand("%:p")
     if (f == "")
@@ -69,7 +68,7 @@ function JSXRunner()
     return f
   end
 
-  -- endure the current buffer is saved to disk
+  -- ensure the current buffer is saved to disk
   F = ensure_or_create_path()
   if (vim.bo.filetype ~= "javascriptreact")
   then
@@ -80,4 +79,4 @@ function JSXRunner()
 end
 
 -- setup the nvim auto command
-vim.api.nvim_create_user_command("JSXRunner", JSXRunner, {})
+vim.api.nvim_create_user_command("ExtendScriptRunner", ExtendScriptRunner, {})
